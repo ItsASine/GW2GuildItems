@@ -1,0 +1,9 @@
+{
+  "name": "GW2GuildItems",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.2",
+    "jquery-ui-bundle": "^1.11.4"
+  }
+}
