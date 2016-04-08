@@ -25,7 +25,46 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
+/node_modules/jquery-ui-bundle/images
+/node_modules/jquery-ui-bundle/jquery-ui.css
+/node_modules/jquery-ui-bundle/jquery-ui.js
+/node_modules/jquery-ui-bundle/external
+/node_modules/jquery-ui-bundle/index.html
+/node_modules/jquery-ui-bundle/package.json
+/node_modules/jquery-ui-bundle/jquery-ui.structure.css
+/node_modules/jquery-ui-bundle/jquery-ui.structure.min.css
+/node_modules/jquery-ui-bundle/jquery-ui.theme.css
+/node_modules/jquery-ui-bundle/jquery-ui.theme.min.css
+/node_modules/jquery/AUTHORS.txt
+/node_modules/jquery/README.md
+/node_modules/jquery/LICENSE.txt
+/node_modules/jquery/package.json
+/node_modules/jquery/dist/jquery.js
+/node_modules/jquery/sizzle
+/node_modules/jquery/src
+/node_modules/jquery/dist/jquery.slim.js
+/node_modules/jquery/dist/jquery.slim.min.map
+/node_modules/jquery/dist/jquery.slim.min.js
+/node_modules/jquery/bower.json
+/node_modules/bootstrap/dist/css/bootstrap-theme.css.map
+/node_modules/bootstrap/dist/js/npm.js
+/node_modules/bootstrap/less
+/node_modules/bootstrap/CHANGELOG.md
+/node_modules/bootstrap/dist/js/bootstrap.js
+/node_modules/bootstrap/fonts
+/node_modules/bootstrap/grunt
+/node_modules/bootstrap/dist/css/bootstrap.css.map
+/node_modules/bootstrap/dist/css/bootstrap-theme.min.css
+/node_modules/bootstrap/README.md
+/node_modules/bootstrap/dist/css/bootstrap-theme.css
+/node_modules/bootstrap/Gruntfile.js
+/node_modules/bootstrap/dist/fonts
+/node_modules/bootstrap/LICENSE
+/node_modules/bootstrap/dist/css/bootstrap-theme.min.css.map
+/node_modules/bootstrap/dist/css/bootstrap.css
+/node_modules/bootstrap/js
+/node_modules/bootstrap/package.json
+#node_modules
 jspm_packages
 
 # Optional npm cache directory
