@@ -1,6 +1,0 @@
-{
-  "name": "Gw2guilditems",
-  "tagline": "A 'spreadsheet' of the items the GW2 guild owns and items related transactions",
-  "body": "# GW2GuildItems\r\nA 'spreadsheet' of the items the GW2 guild owns and items related transactions\r\n\r\n## Goals\r\n1. Have a list of names of who has donated to the guild, and how many items have been donated by each\r\n2. Have a list of items currently in all guild locations, stash and treasury\r\n3. Have a list of all item related transactions in the guild, as a master list\r\n4. Make it generic so many guilds could use it should they choose",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
