@@ -21,41 +21,46 @@
 
 <body>
 <div class='container'>
-    <div class='row'>
-        <div class='col-xs-12 text-center'>
-            <h1>GW2 Guild Items</h1>
-        </div>
+    <div class='col-xs-12 text-center'>
+        <h1>GW2 Guild Items</h1>
+        <hr />
     </div>
 
-    <div class='row'>
-        <div class='col-xs-12 text-center'>
-            <form>
-                <label for="id" class='col-xs-6 text-right'>Guild ID</label>
-                <input type="text" id="id" class='col-xs-6'/>
-                <br/>
-                <p>Search
-                    <a href="https://guilds.gw2w2w.com">GW2W2W</a>
-                    for your guild name if you do not know your guild ID
-                </p>
-                <br/>
-                <label for="key" class='col-xs-6 text-right'>Guild Leader's API Key</label>
-                <input type="text" id="key" class='col-xs-6'/>
-                <br/>
-                <p>
-                    Have a guild leader log in to their GW2 account and generate an API key
-                    with the 'guilds' permission
-                    to be able to use this app
-                </p>
-                <br/>
-                <input type="button" value="Fetch" onclick="getData()"/>
-            </form>
-        </div>
+    <div class='col-xs-12 text-center'>
+        <form>
+            <label for="id" class='col-xs-6 text-right'>Guild ID</label>
+            <input type="text" id="id" class='col-xs-6'/>
+            <br/>
+            <p>Search
+                <a href="https://guilds.gw2w2w.com">GW2W2W</a>
+                for your guild name if you do not know your guild ID
+            </p>
+            <br/>
+            <label for="key" class='col-xs-6 text-right'>Guild Leader's API Key</label>
+            <input type="text" id="key" class='col-xs-6'/>
+            <br/>
+            <p>
+                Have a guild leader log in to their GW2 account and generate an API key
+                with the 'guilds' permission
+                to be able to use this app
+            </p>
+            <br/>
+            <input type="button" value="Fetch" onclick="getData()"/>
+        </form>
+        <hr />
     </div>
 
     <div class='col-xs-12'>
-        <h2>Recent Guild Deposits</h2>
+        <ul class="nav nav-pills nav-justified">
+            <li><a href="#items">Items</a></li>
+            <li><a href="#gold">Gold</a></li>
+            <li><a href="#treasury">Treasury</a></li>
+        </ul>
 
-        <h3>Items</h3>
+        <h2 class="text-center">Recent Stash Deposits</h2>
+
+        <a name="items"></a>
+        <h3 class="text-center">Items</h3>
         <table id="items" class="table table-responsive">
             <thead class="thead-default">
             <tr>
@@ -67,7 +72,8 @@
             </thead>
         </table>
 
-        <h3>Gold</h3>
+        <a name="gold"></a>
+        <h3 class="text-center">Gold</h3>
         <table id="coins" class="table table-responsive">
             <thead class="thead-default">
             <tr>
@@ -78,7 +84,25 @@
             </thead>
         </table>
 
-        <h4>Feel free to submit a <a href="https://github.com/ItsASine/GW2GuildItems/issues">feature request</a></h4>
+        <a name="treasury"></a>
+        <h2 class="text-center">Recent Treasury Deposits</h2>
+        <table id="treasury" class="table table-responsive">
+            <thead class="thead-default">
+            <tr>
+                <th>Time</th>
+                <th>Person</th>
+                <th>Item</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+        </table>
+
+        <h4 class="text-center">
+            Feel free to submit a
+            <a href="https://github.com/ItsASine/GW2GuildItems/issues">
+                feature request
+            </a>
+        </h4>
     </div>
 </div>
 

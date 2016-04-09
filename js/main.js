@@ -1,12 +1,15 @@
 function getData() {
-    var itemTable = document.getElementById("items");
-    var coinTable = document.getElementById("coins");
     var guildID = document.getElementById("id").value;
     var guildKey = document.getElementById("key").value;
+
+    var itemTable = document.getElementById("items");
+    var coinTable = document.getElementById("coins");
+    var treasuryTable = document.getElementById("treasury");
 
     $.get('https://api.guildwars2.com/v2/guild/' + guildID + '/log' + '?access_token=' + guildKey, function (data) {
         var itemRows = 0;
         var coinRows = 0;
+        var treasuryRows = 0;
 
         for (var i = 0; i < data.length; i++) {
             if (data[i].operation == 'deposit') {
@@ -57,6 +60,28 @@ function getData() {
                         money.innerHTML = coins;
                     })();
                 }
+            } else if (data[i].type == 'treasury') {
+                (function () {
+                    treasuryRows++;
+                    var row = treasuryTable.insertRow(treasuryRows);
+
+                    var time = row.insertCell(0);
+                    var name = row.insertCell(1);
+                    var item = row.insertCell(2);
+                    var amount = row.insertCell(3);
+
+                    var dateTime = data[i].time;
+                    var user = data[i].user;
+                    var count = data[i].count;
+
+                    $.get('https://api.guildwars2.com/v2/items/' + data[i].item_id, function (itemStuff) {
+                        item.innerHTML = itemStuff.name;
+                    });
+
+                    time.innerHTML = dateTime;
+                    name.innerHTML = user;
+                    amount.innerHTML = count;
+                })();
             }
         }
     }, "json");
