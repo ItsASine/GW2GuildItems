@@ -15,6 +15,8 @@
     <link rel='stylesheet' href='node_modules/jquery-ui-bundle/jquery-ui.min.css'>
 
     <link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.min.css'>
+
+    <link rel='stylesheet' href='css/main.css'>
 </head>
 
 <body>
@@ -25,17 +27,56 @@
         </div>
     </div>
 
+    <div class='row'>
+        <div class='col-xs-12 text-center'>
+            <form>
+                <label for="id" class='col-xs-6 text-right'>Guild ID</label>
+                <input type="text" id="id" class='col-xs-6'/>
+                <br/>
+                <p>Search
+                    <a href="https://guilds.gw2w2w.com">GW2W2W</a>
+                    for your guild name if you do not know your guild ID
+                </p>
+                <br/>
+                <label for="key" class='col-xs-6 text-right'>Guild Leader's API Key</label>
+                <input type="text" id="key" class='col-xs-6'/>
+                <br/>
+                <p>
+                    Have a guild leader log in to their GW2 account and generate an API key
+                    with the 'guilds' permission
+                    to be able to use this app
+                </p>
+                <br/>
+                <input type="button" value="Fetch" onclick="getData()"/>
+            </form>
+        </div>
+    </div>
+
     <div class='col-xs-12'>
-        <table id="content">
+        <h2>Recent Guild Deposits</h2>
+        <h3>Items</h3>
+        <div class="table-div">
+            <table id="items" class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Person</th>
+                    <th>Item</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <h3>Gold</h3>
+        <div class="table-div"></div>
+        <table id="coins" class="table table-responsive">
+            <thead>
             <tr>
                 <th>Time</th>
-                <th></th>
                 <th>Person</th>
-                <th>Item</th>
-                <th>Amount</th>
-                <th></th>
                 <th>Coins</th>
             </tr>
+            </thead>
         </table>
     </div>
 </div>
