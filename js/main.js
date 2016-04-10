@@ -4,7 +4,8 @@ function getData() {
 
     var itemTable = document.getElementById("items");
     var coinTable = document.getElementById("coins");
-    var treasuryTable = document.getElementById("treasury");
+    var treasuryDonationsTable = document.getElementById("treasury-donations");
+    var treasuryTable = document.getElementById('treasury-status');
 
     $.get('https://api.guildwars2.com/v2/guild/' + guildID + '/log' + '?access_token=' + guildKey, function (data) {
         var itemRows = 0;
@@ -63,7 +64,7 @@ function getData() {
             } else if (data[i].type == 'treasury') {
                 (function () {
                     treasuryRows++;
-                    var row = treasuryTable.insertRow(treasuryRows);
+                    var row = treasuryDonationsTable.insertRow(treasuryRows);
 
                     var time = row.insertCell(0);
                     var name = row.insertCell(1);
@@ -83,6 +84,40 @@ function getData() {
                     amount.innerHTML = count;
                 })();
             }
+        }
+    }, "json");
+
+    $.get('https://api.guildwars2.com/v2/guild/' + guildID + '/treasury' + '?access_token=' + guildKey, function (data) {
+        var treasuryRows = 0;
+
+        for (var i = 0; i < data.length; i++) {
+            (function () {
+                treasuryRows++;
+
+                var row = treasuryTable.insertRow(treasuryRows);
+
+                var item = row.insertCell(0);
+                var amount = row.insertCell(1);
+                var neededBy = row.insertCell(2);
+
+                var count = data[i].count;
+                var upgradeList = data[i].needed_by;
+                var upgrade = '';
+
+                $.get('https://api.guildwars2.com/v2/items/' + data[i].item_id, function (itemStuff) {
+                    item.innerHTML = itemStuff.name;
+                });
+
+                upgradeList.forEach(function(upgradeInfo) {
+                    $.get('https://api.guildwars2.com/v2/guild/upgrades/' + upgradeInfo.upgrade_id, function (upgradeData) {
+                        upgrade = upgrade + upgradeData.name + ' - ' + upgradeInfo.count + '<br/>';
+                    }).then(function(){
+                        neededBy.innerHTML = upgrade;
+                    });
+                });
+
+                amount.innerHTML = count;
+            })();
         }
     }, "json");
 }

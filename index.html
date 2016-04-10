@@ -23,7 +23,7 @@
 <div class='container'>
     <div class='col-xs-12 text-center'>
         <h1>GW2 Guild Items</h1>
-        <hr />
+        <hr/>
     </div>
 
     <div class='col-xs-12 text-center'>
@@ -47,18 +47,23 @@
             <br/>
             <input type="button" value="Fetch" onclick="getData()"/>
         </form>
-        <hr />
+        <hr/>
     </div>
 
     <div class='col-xs-12'>
         <ul class="nav nav-pills nav-justified">
-            <li><a href="#items">Items</a></li>
-            <li><a href="#gold">Gold</a></li>
-            <li><a href="#treasury">Treasury</a></li>
+            <li><a href="#items">Item Deposits</a></li>
+            <li><a href="#gold">Gold Deposits</a></li>
+            <li><a href="#treasury-donations">Treasury Deposits</a></li>
+            <li><a href="#treasury-status">Entire Treasury</a></li>
         </ul>
+    </div>
 
+    <div class='col-xs-12'>
         <h2 class="text-center">Recent Stash Deposits</h2>
+    </div>
 
+    <div class='col-xs-12'>
         <a name="items"></a>
         <h3 class="text-center">Items</h3>
         <table id="items" class="table table-responsive">
@@ -71,7 +76,9 @@
             </tr>
             </thead>
         </table>
+    </div>
 
+    <div class='col-xs-12'>
         <a name="gold"></a>
         <h3 class="text-center">Gold</h3>
         <table id="coins" class="table table-responsive">
@@ -83,10 +90,16 @@
             </tr>
             </thead>
         </table>
+    </div>
 
-        <a name="treasury"></a>
+    <div class='col-xs-12'>
+        <h2 class="text-center">Guild Treasury</h2>
+    </div>
+
+    <div class='col-xs-12'>
+        <a name="treasury-donations"></a>
         <h2 class="text-center">Recent Treasury Deposits</h2>
-        <table id="treasury" class="table table-responsive">
+        <table id="treasury-donations" class="table table-responsive">
             <thead class="thead-default">
             <tr>
                 <th>Time</th>
@@ -96,7 +109,23 @@
             </tr>
             </thead>
         </table>
+    </div>
 
+    <div class='col-xs-12'>
+        <a name="treasury-status"></a>
+        <h2 class="text-center">Current Treasury</h2>
+        <table id="treasury-status" class="table table-responsive">
+            <thead class="thead-default">
+            <tr>
+                <th>Item</th>
+                <th>Amount</th>
+                <th>Needed By</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class='col-xs-12'>
         <h4 class="text-center">
             Feel free to submit a
             <a href="https://github.com/ItsASine/GW2GuildItems/issues">
@@ -111,5 +140,23 @@
 
 <script src='node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
 <script src='js/main.js'></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-19228491-4', 'auto');
+    ga('send', 'pageview');
+
+</script>
 </body>
 </html>
